@@ -28,6 +28,7 @@ import com.example.instalog.ui.theme.InstalogTheme
 import com.example.instalog.ui.theme.Purple40
 import com.instalog.mobile.Instalog
 import com.instalog.mobile.InstalogAlertDialogHandler
+import com.instalog.mobile.InstalogOptions
 import com.instalog.mobile.models.InstalogLogModel
 import com.instalog.mobile.ui.Gap
 import com.instalog.mobile.ui.InstalogAlert
@@ -46,7 +47,12 @@ class MainActivity : ComponentActivity(), InstalogAlertDialogHandler {
         instalog.initialize(
             key = "instalog_9b2d95c905d643a683d255242d1c46cc",
             context = this,
-            handler = this
+            handler = this,
+            options = InstalogOptions(
+
+                isLogEnabled = false,
+                isLoggerEnabled = true
+            )
         )
 
         instalog.identifyUser("chiziaruhoma@gmail.com")
