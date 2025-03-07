@@ -23,7 +23,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.instalog.mobile.feedback.InstalogFeedbackActivity"
+            android:name="dev.instalog.mobile.feedback.InstalogFeedbackActivity"
             android:label="Instalog"
             android:theme="@style/Theme.Instalog"/>
     </application>
