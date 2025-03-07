@@ -1,0 +1,25 @@
+name: Cleanup Package Versions
+
+on:
+  # Run on a schedule (once a month at midnight UTC on the 1st day)
+  schedule:
+    - cron: '0 0 1 * *'
+  
+  # Allow manual triggering
+  workflow_dispatch:
+
+jobs:
+  cleanup:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      
+      - name: Delete old package versions
+        uses: actions/delete-package-versions@v5
+        with:
+          package-name: 'com.instalog.mobile'
+          package-type: 'maven'
+          min-versions-to-keep: 10
+          token: ${{ secrets.GITHUB_TOKEN }}
