@@ -26,16 +26,16 @@ import androidx.compose.ui.unit.sp
 import com.example.instalog.ui.theme.Green100
 import com.example.instalog.ui.theme.InstalogTheme
 import com.example.instalog.ui.theme.Purple40
-import com.instalog.mobile.Instalog
-import com.instalog.mobile.InstalogAlertDialogHandler
-import com.instalog.mobile.InstalogOptions
-import com.instalog.mobile.models.InstalogLogModel
-import com.instalog.mobile.ui.Gap
-import com.instalog.mobile.ui.InstalogAlert
-import com.instalog.mobile.ui.InstalogAlertData
-import com.instalog.mobile.ui.InstalogButton
-import com.instalog.mobile.ui.InstalogColors
-import com.instalog.mobile.ui.InstalogTextField
+import dev.instalog.mobile.Instalog
+import dev.instalog.mobile.InstalogAlertDialogHandler
+import dev.instalog.mobile.InstalogOptions
+import dev.instalog.mobile.models.InstalogLogModel
+import dev.instalog.mobile.ui.Gap
+import dev.instalog.mobile.ui.InstalogAlert
+import dev.instalog.mobile.ui.InstalogAlertData
+import dev.instalog.mobile.ui.InstalogButton
+import dev.instalog.mobile.ui.InstalogColors
+import dev.instalog.mobile.ui.InstalogTextField
 
 class MainActivity : ComponentActivity(), InstalogAlertDialogHandler {
     private val instalog = Instalog.getInstance()
@@ -45,13 +45,13 @@ class MainActivity : ComponentActivity(), InstalogAlertDialogHandler {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         instalog.initialize(
-            key = "instalog_9b2d95c905d643a683d255242d1c46cc",
+            key = "instalog_ea1801ecfc294eb4b985f2bbef7da498",
             context = this,
             handler = this,
             options = InstalogOptions(
-
-                isLogEnabled = false,
-                isLoggerEnabled = true
+                isLogEnabled = true,
+                isLoggerEnabled = true,
+                isCrashEnabled = true
             )
         )
 

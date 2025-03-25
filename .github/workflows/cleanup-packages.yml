@@ -19,7 +19,7 @@ jobs:
       - name: Delete old package versions
         uses: actions/delete-package-versions@v5
         with:
-          package-name: 'com.instalog.mobile'
+          package-name: 'dev.instalog.mobile'
           package-type: 'maven'
           min-versions-to-keep: 10
           token: ${{ secrets.GITHUB_TOKEN }}
